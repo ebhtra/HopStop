@@ -13,6 +13,11 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    // forest green color used in app scheme
+    static let spruce = UIColor(red: 0.45, green: 0.363873, blue:  0.202817, alpha: 1)
+    // tan color for app scheme
+    static let tan = UIColor(red: 0.999574, green:  0.915802, blue:  0.628685 , alpha: 1)
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {

@@ -13,6 +13,8 @@
 		E47C09581C84B14F00026B51 /* HopStop.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E47C09561C84B14F00026B51 /* HopStop.xcdatamodeld */; };
 		E47C095A1C84B14F00026B51 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E47C09591C84B14F00026B51 /* Assets.xcassets */; };
 		E47C095D1C84B14F00026B51 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E47C095B1C84B14F00026B51 /* LaunchScreen.storyboard */; };
+		E47C09651C84CF9700026B51 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47C09641C84CF9700026B51 /* Beer.swift */; };
+		E47C09671C84D12700026B51 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47C09661C84D12700026B51 /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		E47C09591C84B14F00026B51 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E47C095C1C84B14F00026B51 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E47C095E1C84B14F00026B51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E47C09641C84CF9700026B51 /* Beer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		E47C09661C84D12700026B51 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				E47C094F1C84B14F00026B51 /* AppDelegate.swift */,
+				E47C09661C84D12700026B51 /* CoreDataStack.swift */,
+				E47C09641C84CF9700026B51 /* Beer.swift */,
 				E47C09511C84B14F00026B51 /* ViewController.swift */,
 				E47C09531C84B14F00026B51 /* Main.storyboard */,
 				E47C09591C84B14F00026B51 /* Assets.xcassets */,
@@ -138,9 +144,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E47C09671C84D12700026B51 /* CoreDataStack.swift in Sources */,
 				E47C09581C84B14F00026B51 /* HopStop.xcdatamodeld in Sources */,
 				E47C09521C84B14F00026B51 /* ViewController.swift in Sources */,
 				E47C09501C84B14F00026B51 /* AppDelegate.swift in Sources */,
+				E47C09651C84CF9700026B51 /* Beer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
