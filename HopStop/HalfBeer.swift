@@ -19,13 +19,15 @@ struct HalfBeer {
     var maker: String
     var id: String
     var notes: String
+    var brewerId: String
     // var pic: some kind of icon maybe?
     // var story: story behind the brewery maybe?
     
-    init(name: String, maker: String, id: String, notes: String) {
+    init(name: String, maker: String, id: String, notes: String, brewerId: String) {
         self.name = name
         self.maker = maker
         self.id = id
         self.notes = notes
+        self.brewerId = brewerId
     }
 }

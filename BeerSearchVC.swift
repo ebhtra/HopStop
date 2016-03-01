@@ -32,6 +32,7 @@ class BeerSearchVC: BeerVC, NSFetchedResultsControllerDelegate, UITableViewDeleg
             beerDict[Beer.Keys.Brewer] = currentHalfBeer?.maker ?? ""
             beerDict[Beer.Keys.Descrip] = currentHalfBeer?.notes ?? ""
             beerDict[Beer.Keys.Name] = currentHalfBeer?.name ?? ""
+            beerDict[Beer.Keys.BrewerID] = currentHalfBeer?.brewerId
             beerDict[Beer.Keys.Rating] = nil
             
             let _ = Beer(dict: beerDict, context: sharedContext)

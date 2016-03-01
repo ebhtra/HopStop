@@ -53,7 +53,7 @@ extension BreweryDbClient {
         return task
     }
     
-    func brewerySearch(brewery: String, completion: CompletionHander) {
+    func brewerySearch(brewery: String, completion: CompletionHandler) -> NSURLSessionDataTask? {
         
         let params = [Params.Name: brewery]
         let endpoint = Resources.BrewerySearch
@@ -64,16 +64,17 @@ extension BreweryDbClient {
                 completion(result: nil, error: error)
                 
             } else {
-                
+                print("made it to the error-free completion handler of brewerySearch")
+                print(JSONResult)
                 if let breweryData = JSONResult.valueForKey("data") as? [[String : AnyObject]] {
                     
                     if let notes = breweryData[0]["descrip"] as? String {
                         completion(result: notes, error: nil)
                     }
-                }
+                } 
             }
         }
-        task.resume()
+        return task
     }
         
     

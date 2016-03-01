@@ -21,6 +21,7 @@ class Beer: NSManagedObject {
         //static let Lon = "longitude"
         static let Name = "beerName"
         static let Brewer = "brewer"
+        static let BrewerID = ":breweryId"
         static let Rating = "rating"
         //static let Vessel = "vessel"
         //static let BornOn = "bornOn"
@@ -37,6 +38,7 @@ class Beer: NSManagedObject {
    //@NSManaged var longitude: Double
     @NSManaged var beerName: String
     @NSManaged var brewer: String
+    @NSManaged var breweryId: String
     @NSManaged var rating: Int
     //@NSManaged var vessel: String
     //@NSManaged var bornOn: Bool  // can't use optional Bool for this property
@@ -75,6 +77,7 @@ class Beer: NSManagedObject {
         descrip = dict[Keys.Descrip] as! String
         beerName = dict[Keys.Name] as! String
         brewer = dict[Keys.Brewer] as! String
+        breweryId = dict[Keys.BrewerID] as! String
         rating = dict[Keys.Rating] as? Int ?? -1
         //vessel = dict[Keys.Vessel] as! String
         //bornOn = dict[Keys.BornOn] as! Bool

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F27" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1605" minimumToolsVersion="Automatic">
     <entity name="Beer" representedClassName=".Beer" syncable="YES">
         <attribute name="beerName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="brewer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="breweryId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dbID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="descrip" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rating" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Beer" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Beer" positionX="-63" positionY="-18" width="128" height="135"/>
     </elements>
 </model>

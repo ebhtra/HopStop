@@ -17,11 +17,11 @@ class BreweryDbClient {
     
     let session = NSURLSession.sharedSession()
     
-    typealias CompletionHander = (result: AnyObject!, error: NSError?) -> Void
+    typealias CompletionHandler = (result: AnyObject!, error: NSError?) -> Void
     
     // MARK: - All purpose task method for data
     
-    func taskForResource(resource: String, parameters: [String : AnyObject], completionHandler: CompletionHander) -> NSURLSessionDataTask {
+    func taskForResource(resource: String, parameters: [String : AnyObject], completionHandler: CompletionHandler) -> NSURLSessionDataTask {
         //make the input mutable
         var mutableParameters = parameters
         var mutableResource = resource  // only need this if substituting a beer id for ":beerId" resource (see below)
@@ -29,12 +29,19 @@ class BreweryDbClient {
         // Add in the breweryDB API Key
         mutableParameters["key"] = Constants.ApiKey
         
-        // Substitute the id parameter into the resource
+        // Substitute the id parameters into the resource
         if resource.rangeOfString(":beerId") != nil {
             assert(parameters[Keys.ID] != nil)
             
             mutableResource = mutableResource.stringByReplacingOccurrencesOfString(":beerId", withString: "\(parameters[Keys.ID]!)")
             mutableParameters.removeValueForKey(Keys.ID)
+        }
+        if resource.rangeOfString(":brewerID") != nil {
+            assert(parameters[Beer.Keys.BrewerID] != nil)
+            
+            mutableResource = mutableResource.stringByReplacingOccurrencesOfString(":brewerID", withString: "\(parameters[Beer.Keys.BrewerID]!)")
+            mutableParameters.removeValueForKey(Beer.Keys.BrewerID)
+
         }
         
         
@@ -42,7 +49,7 @@ class BreweryDbClient {
         let url = NSURL(string: urlString)!
         let request = NSURLRequest(URL: url)
         
-        // print(url)
+         print("url for getTask in client is \(url)")
         
         let task = session.dataTaskWithRequest(request) {data, response, downloadError in
             
@@ -60,7 +67,7 @@ class BreweryDbClient {
     
     // Parsing the JSON
     
-    class func parseJSONWithCompletionHandler(data: NSData, completionHandler: CompletionHander) {
+    class func parseJSONWithCompletionHandler(data: NSData, completionHandler: CompletionHandler) {
         
         do {
             let parsedResult = try NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments)
