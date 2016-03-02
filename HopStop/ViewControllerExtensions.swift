@@ -25,7 +25,7 @@ extension UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func showBackgroundBeer() {
+    func showBackgroundBeer() {  
         self.view.backgroundColor = UIColor.whiteColor()
         let colorTop = UIColor(red: 0.9, green: 0.6, blue: 0.1, alpha: 0.0).CGColor
         let colorMid = UIColor(red: 1.0, green: 0.7, blue: 0.1, alpha: 1.0).CGColor
@@ -50,8 +50,8 @@ extension UIViewController {
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        // if top of field being edited is less than 48 higher from the bottom than the top of keyboard will be,
-        //    raise the view to get it there during editing. That gives user at least 48 points of clearance to type
+        // if top of field being edited is less than 100 higher from the bottom than the top of keyboard will be,
+        //    raise the view to get it there during editing. That gives user at least 100 points of clearance to type
         let hKeys = getKeyboardHeight(notification)
         var yUp = CGFloat(0)
         for v in view.subviews {  // find which field is editing
@@ -59,7 +59,7 @@ extension UIViewController {
                 yUp = view.frame.height - v.frame.minY
             }
         }
-        view.frame.origin.y -= max(0, hKeys + 48 - yUp)
+        view.frame.origin.y -= max(0, hKeys + 100 - yUp)
         
     }
     

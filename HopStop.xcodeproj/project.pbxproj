@@ -23,6 +23,7 @@
 		E47C09771C84ECD200026B51 /* HalfBeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47C09761C84ECD200026B51 /* HalfBeer.swift */; };
 		E47C09791C8515CD00026B51 /* BeerDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47C09781C8515CD00026B51 /* BeerDetailVC.swift */; };
 		E4E0494E1C85FF3E001A91AE /* BreweryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E0494D1C85FF3E001A91AE /* BreweryDetailVC.swift */; };
+		E4E049501C86BACB001A91AE /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E0494F1C86BACB001A91AE /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		E47C09761C84ECD200026B51 /* HalfBeer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfBeer.swift; sourceTree = "<group>"; };
 		E47C09781C8515CD00026B51 /* BeerDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeerDetailVC.swift; path = HopStop/BeerDetailVC.swift; sourceTree = "<group>"; };
 		E4E0494D1C85FF3E001A91AE /* BreweryDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreweryDetailVC.swift; sourceTree = "<group>"; };
+		E4E0494F1C86BACB001A91AE /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = ../Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				E47C09641C84CF9700026B51 /* Beer.swift */,
 				E47C09701C84E8B700026B51 /* BreweryDbClient.swift */,
 				E47C09721C84E9F400026B51 /* BreweryDbConvenience.swift */,
+				E4E0494F1C86BACB001A91AE /* Reachability.swift */,
 				E47C09741C84EA3700026B51 /* Constants.swift */,
 				E47C09591C84B14F00026B51 /* Assets.xcassets */,
 				E47C095B1C84B14F00026B51 /* LaunchScreen.storyboard */,
@@ -168,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4E049501C86BACB001A91AE /* Reachability.swift in Sources */,
 				E47C09671C84D12700026B51 /* CoreDataStack.swift in Sources */,
 				E47C09581C84B14F00026B51 /* HopStop.xcdatamodeld in Sources */,
 				E47C09771C84ECD200026B51 /* HalfBeer.swift in Sources */,

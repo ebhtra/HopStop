@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="width" constant="300" id="YUB-yi-SEB"/>
                                 </constraints>
                                 <color key="barTintColor" red="0.45000000000000001" green="0.36387310610000001" blue="0.2028172348" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="done"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="IcF-gH-31X"/>
@@ -186,12 +186,20 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="XaU-Mk-Ish"/>
+                    <navigationItem key="navigationItem" id="XaU-Mk-Ish">
+                        <barButtonItem key="rightBarButtonItem" title="ℹ️" id="Da8-g7-7a9">
+                            <color key="tintColor" red="0.45000000000000001" green="0.36387310610000001" blue="0.2028172348" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="showTip:" destination="Hjb-iP-kEi" id="TrE-2w-Acg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentBeerBrewer" destination="F6n-tu-KEu" id="AC9-uG-vpp"/>
                         <outlet property="currentBeerName" destination="rOe-5W-2yR" id="eoo-Gd-Ome"/>
                         <outlet property="searchTable" destination="ZeN-lZ-Z7J" id="FgD-f8-jnQ"/>
                         <outlet property="searcher" destination="Uch-MK-t9P" id="tQm-EX-ek4"/>
+                        <outlet property="watchButton" destination="549-09-1hl" id="OIU-JV-aoI"/>
                         <outlet property="watchTable" destination="UHe-Yo-lTg" id="pea-Di-cJG"/>
                     </connections>
                 </viewController>
@@ -247,14 +255,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcd-Ae-aRl">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tcd-Ae-aRl">
                                 <rect key="frame" x="340" y="300" width="42" height="30"/>
                                 <color key="backgroundColor" red="0.45000000000000001" green="0.36387310610000001" blue="0.2028172348" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="95P-p0-LUV"/>
                                     <constraint firstAttribute="width" constant="42" id="uia-NB-KSM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.99957433090000003" green="0.91580224529999998" blue="0.6286849269" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -284,10 +292,10 @@
                                     <action selector="brewerStory:" destination="Bg0-VN-0Gl" eventType="touchUpInside" id="kdW-uE-c0z"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5zE-EB-0Fm">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5zE-EB-0Fm">
                                 <rect key="frame" x="36" y="392" width="528" height="192"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
                                 <connections>
                                     <outlet property="delegate" destination="Bg0-VN-0Gl" id="NRe-tQ-V5M"/>
                                 </connections>
@@ -349,14 +357,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jo4-JJ-FaW">
-                                <rect key="frame" x="20" y="36" width="560" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jo4-JJ-FaW">
+                                <rect key="frame" x="20" y="36" width="560" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="0.45000000000000001" green="0.36387310610000001" blue="0.2028172348" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rcc-AU-7AR">
-                                <rect key="frame" x="36" y="80" width="528" height="500"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rcc-AU-7AR">
+                                <rect key="frame" x="36" y="84" width="528" height="500"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -379,7 +387,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bZ-0W-hnK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889" y="244"/>
+            <point key="canvasLocation" x="2232" y="335"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ain-uy-GFc">

@@ -27,20 +27,23 @@ extension BreweryDbClient {
                     var beerlist = [HalfBeer]()
                     
                     for beer in beerdata {
-                        print("NEXT BEEEEEEEEEEEEEEEEEEEEEER: \(beer)")
+                        
                         let name = beer["name"] as! String
                         var maker = ""
                         let id = beer["id"] as! String
                         let notes = beer["description"] as? String ?? ""
+                        var breweryId = ""
+                        
                         // TODO -- add multiple brewers to one beer, with a to-many relationship in datamodel
                         
                         if let brewers = beer["breweries"] as? [[String : AnyObject]] {
                             
                             maker = (brewers[0]["name"] ?? brewers[0]["nameShortDisplay"]) as! String
+                            breweryId = (brewers[0]["id"]) as! String
                             // (brewers[0]["images"]!["icon"] as? String) holds brewery icons if needed later
                             
                         }
-                        beerlist.append(HalfBeer(name: name, maker: maker, id: id, notes: notes))
+                        beerlist.append(HalfBeer(name: name, maker: maker, id: id, notes: notes, brewerId: breweryId))
                     }
                     completionHandler(result: beerlist, error: nil)
                     
@@ -53,25 +56,29 @@ extension BreweryDbClient {
         return task
     }
     
-    func brewerySearch(brewery: String, completion: CompletionHandler) -> NSURLSessionDataTask? {
+    func brewerySearch(breweryId: String, completion: CompletionHandler) -> NSURLSessionDataTask? {
         
-        let params = [Params.Name: brewery]
-        let endpoint = Resources.BrewerySearch
+        let params = [Beer.Keys.BrewerID: breweryId]
+        let resource = Resources.BreweryByID
         
-        let task = taskForResource(endpoint, parameters: params) { JSONResult, error in
+        let task = taskForResource(resource, parameters: params) { JSONResult, error in
             
             if let error = error {
                 completion(result: nil, error: error)
                 
             } else {
-                print("made it to the error-free completion handler of brewerySearch")
-                print(JSONResult)
-                if let breweryData = JSONResult.valueForKey("data") as? [[String : AnyObject]] {
+               
+                if let breweryData = JSONResult.valueForKey("data") as? [String : AnyObject] {
                     
-                    if let notes = breweryData[0]["descrip"] as? String {
+                    if let notes = breweryData["description"] as? String {
                         completion(result: notes, error: nil)
+                    } else {
+                        completion(result: "Sorry--no description is provided by the brewery.", error: nil)
                     }
-                } 
+                } else {
+                    print("can't find data key in JSON results")
+                    completion(result: "", error: nil)
+                }
             }
         }
         return task

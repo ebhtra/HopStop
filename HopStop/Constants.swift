@@ -26,6 +26,7 @@ extension BreweryDbClient {
         static let BeerSearch = "beers/"
         static let BrewerySearch = "brewery/"
         static let Search = "search"
+        static let BreweryByID = "brewery/:breweryId"
     }
     
     struct Params {
